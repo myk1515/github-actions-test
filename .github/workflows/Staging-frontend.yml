@@ -22,9 +22,17 @@ jobs:
         node-version: 12.x
     - name: Install Packages
       run: npm install
+      working-directory: ${{env.working-directory-frontend}}
+      
     - name: Build 
       run: npm run build
+      working-directory: ${{env.working-directory-frontend}}
+      
     - name: Unit Test
       run: npm run test:unit
+      working-directory: ${{env.working-directory-frontend}}
+      
     - name: E2E Test
       run: npm run test:e2e
+      working-directory: ${{env.working-directory-frontend}}
+      
